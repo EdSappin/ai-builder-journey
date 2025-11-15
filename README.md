@@ -4,5 +4,6 @@ APIs
 Flash API
 
 Apps
-https://aastrumexecdash.lovable.app/
-https://aastrumdocuchatpro.lovable.app/
+Executive Dashboard https://aastrumexecdash.lovable.app/
+Document Chat https://aastrumdocuchatpro.lovable.app/
+SaaS Bootstrapper https://aastrumsaasify.lovable.app/dashboard
