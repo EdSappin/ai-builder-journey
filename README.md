@@ -25,7 +25,7 @@
 - Anthropic MCP courses
 - OpenAI AI Foundations
 
-_Updated January 20, 2026_
+_Updated January 21, 2026_
 
 ---
 
