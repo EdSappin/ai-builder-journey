@@ -1,6 +1,5 @@
 # AI Builder Journey - 12 Week Intensive
 
-**Executive Technical Transformation Program**  
 **Timeline:** January 2026 - March 2026  
 **Goal:** 15-20 production apps + 12-15 certifications
 
@@ -48,6 +47,6 @@ _Updated November 14, 2025_
 AI-powered tool for private company valuation analysis built with Lovable.
 
 
-_Updated January 21, 2025_
+_Updated January 21, 2026_
 
 _Last Updated: January 2026_
