@@ -1,6 +1,5 @@
 # AI Builder Journey - 12 Week Intensive
 
-**Executive Technical Transformation Program**  
 **Timeline:** January 2026 - March 2026  
 **Goal:** 15-20 production apps + 12-15 certifications
 
