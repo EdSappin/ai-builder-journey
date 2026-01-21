@@ -1,4 +1,4 @@
-# AI Builder Journey - 12 Week Intensive
+# AI Builder Journey
 
 **Timeline:** January 2026 - March 2026  
 **Goal:** 15-20 production apps + 12-15 certifications
@@ -7,12 +7,13 @@
 - Claude Code 2.1 (CLI agent)
 - Claude Cowork (file automation)
 - Claude Opus 4.5 (primary AI model)
+- Claude Sonnet 4.5 (secondary AI model)
+- OpenAI ChatGPT 5.2 (secondary AI model)
 - Cursor IDE (AI-assisted coding)
 - Lovable Pro (rapid prototyping)
 - Model Context Protocol (MCP)
 
 ## Program Structure
-- 4 days/week × 3 hours/day
 - Hands-on building focus
 - Production-ready deployments
 - Multi-platform AI integration
@@ -24,29 +25,34 @@
 - Anthropic MCP courses
 - OpenAI AI Foundations
 
-_Updated Jan 20 2026_
+_Updated January 21, 2026_
 
 ---
 
 # Apps and Code I am building along my AI journey
 
-## APIs
-- Flash API
-
 ## Initial Apps Built
-- Executive Dashboard https://aastrumexecdash.lovable.app/
-- Document Chat https://aastrumdocuchatpro.lovable.app/
-- SaaS Bootstrapper https://aastrumsaasify.lovable.app/dashboard
+### 1. Executive Dashboard https://aastrumexecdash.lovable.app/
+### 2. Document Chat https://aastrumdocuchatpro.lovable.app/
+### 3. SaaS Bootstrapper https://aastrumsaasify.lovable.app/
+
+## APIs
+### 1. Flash API
 
 _Updated November 14, 2025_
 
-# New App Built
-- Private Company Valuator https://valuation.aastrum.com/ 
+## New Apps Built
+### 4. Private Company Valuator https://valuation.aastrum.com/ 
 
-## Overview
-AI-powered tool for private company valuation analysis built with Lovable.
+#### Overview
+AI-powered tool for private company valuation analysis.
 
+### 5. Love to Read! https://lovetoread.lovable.app/ 
+
+#### Overview
+Personal reading companion with catalog and recommendations.
 
 _Updated January 21, 2026_
 
-_Last Updated: January 2026_
+
+_Last Updated January 2026_
