@@ -32,25 +32,24 @@ _Updated January 20, 2026_
 # Apps and Code I am building along my AI journey
 
 ## Initial Apps Built
-1. Executive Dashboard https://aastrumexecdash.lovable.app/
-2. Document Chat https://aastrumdocuchatpro.lovable.app/
-3. SaaS Bootstrapper https://aastrumsaasify.lovable.app/
+### 1. Executive Dashboard https://aastrumexecdash.lovable.app/
+### 2. Document Chat https://aastrumdocuchatpro.lovable.app/
+### 3. SaaS Bootstrapper https://aastrumsaasify.lovable.app/
 
 ## APIs
-- Flash API
+### 1. Flash API
 
 _Updated November 14, 2025_
 
 ## New Apps Built
-4. Private Company Valuator https://valuation.aastrum.com/ 
+### 4. Private Company Valuator https://valuation.aastrum.com/ 
 
-### Overview
+#### Overview
 AI-powered tool for private company valuation analysis.
 
-##
-5. Love to Read! https://lovetoread.lovable.app/ 
+### 5. Love to Read! https://lovetoread.lovable.app/ 
 
-### Overview
+#### Overview
 Personal reading companion with catalog and recommendations.
 
 _Updated January 21, 2026_
