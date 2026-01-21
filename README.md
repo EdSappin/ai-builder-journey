@@ -29,16 +29,25 @@ _Updated Jan 20 2026_
 
 ---
 
-Apps and Code I am building along my AI journey
+# Apps and Code I am building along my AI journey
 
-APIs
-Flash API
+## APIs
+- Flash API
 
-Apps
-Executive Dashboard https://aastrumexecdash.lovable.app/
-Document Chat https://aastrumdocuchatpro.lovable.app/
-SaaS Bootstrapper https://aastrumsaasify.lovable.app/dashboard
+## Initial Apps Built
+- Executive Dashboard https://aastrumexecdash.lovable.app/
+- Document Chat https://aastrumdocuchatpro.lovable.app/
+- SaaS Bootstrapper https://aastrumsaasify.lovable.app/dashboard
 
-_Updated Nov 14 2025_
+_Updated November 14, 2025_
+
+# New App Built
+- Private Company Valuator https://valuation.aastrum.com/ 
+
+## Overview
+AI-powered tool for private company valuation analysis built with Lovable.
+
+
+_Updated January 21, 2025_
 
 _Last Updated: January 2026_
