@@ -52,7 +52,7 @@ AI-powered tool for private company valuation analysis.
 #### Overview
 Personal reading companion with catalog and recommendations.
 
-### 6. Pokemon Card Database and Valuation Tool https://github.com/EdSappin/ai-builder-journey/blob/main/Cursor-Projects/Pokemon%20Card%20Database%20and%20Valuation%20Tool/pokemon_card_README.md
+### 6. Pokemon Card Database and Valuation Tool https://github.com/EdSappin/ai-builder-journey/commit/9d802b4162d1ae105aaf9b1f390320889f22ed9a
 
 #### Overview
 Pokemon card tracker and valuation manager
@@ -66,7 +66,7 @@ _Updated January 21, 2026_
 #### Overview
 Interactive AI course for teens
 
-### 8. AI Quest
+### 8. AI Quest https://github.com/EdSappin/ai-builder-journey/tree/main/Cursor-Projects/ai-quest-game
 
 #### Overview
 Learn to use AI like a pro — with real examples from Claude & ChatGPT
