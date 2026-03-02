@@ -74,11 +74,11 @@ Learn to use AI like a pro — with real examples from Claude & ChatGPT
 ### 9. Connective CRM https://connectivecrm.lovable.app/
 
 #### Overview
-Basic CRM with to dos, integrations, and lead tracking
+Simple CRM with to dos, integrations, and lead tracking
 
-_Updated February 27, 2026_
+_Updated March 2, 2026_
 
 
-_Last Updated February 2026_
+_Last Updated March 2026_
 
 
