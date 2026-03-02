@@ -55,4 +55,25 @@ Personal reading companion with catalog and recommendations.
 _Updated January 21, 2026_
 
 
-_Last Updated January 2026_
+## New Apps Built
+### 5. AI Academy https://aiacademygame.lovable.app/
+
+#### Overview
+Interactive AI course for teens
+
+### 6. AI Quest
+
+#### Overview
+Learn to use AI like a pro — with real examples from Claude & ChatGPT
+
+### 7. Connective CRM https://connectivecrm.lovable.app/
+
+#### Overview
+Basic CRM with to dos, integrations, and lead tracking
+
+_Updated February 27, 2026_
+
+
+_Last Updated February 2026_
+
+
