@@ -1,0 +1,64 @@
+"""
+Game constants and configuration for Jacobus: Williamsburg Warrior
+"""
+
+# Screen settings
+SCREEN_WIDTH = 800
+SCREEN_HEIGHT = 600
+FPS = 60
+TITLE = "JACOBUS: WILLIAMSBURG WARRIOR"
+
+# Colors (80s Neon Palette)
+HOT_PINK = (255, 0, 110)
+CYAN = (0, 245, 255)
+PURPLE = (139, 0, 255)
+DARK_NAVY = (10, 14, 39)
+GOLD = (255, 215, 0)
+WHITE = (255, 255, 255)
+BLACK = (0, 0, 0)
+RED = (255, 50, 50)
+GREEN = (50, 255, 100)
+NEON_GREEN = (57, 255, 20)
+DARK_PURPLE = (75, 0, 130)
+
+# Game states
+STATE_MENU = "menu"
+STATE_PLAYING = "playing"
+STATE_PAUSED = "paused"
+STATE_GAME_OVER = "game_over"
+STATE_VICTORY = "victory"
+
+# Player settings
+PLAYER_SPEED = 5
+PLAYER_JUMP_POWER = 15
+PLAYER_MAX_HEALTH = 100
+PLAYER_START_X = 100
+PLAYER_START_Y = 400
+
+# Combat settings
+ATTACK_DAMAGE_LIGHT = 10
+ATTACK_DAMAGE_HEAVY = 25
+ATTACK_DAMAGE_SPECIAL = 40
+ATTACK_RANGE = 80
+COMBO_WINDOW = 0.5  # seconds
+SPECIAL_MOVE_COST = 20  # energy cost
+
+# Enemy settings
+ENEMY_HEALTH = 30
+ENEMY_SPEED = 2
+ENEMY_DAMAGE = 5
+ENEMY_SPAWN_DELAY = 3.0  # seconds
+MAX_ENEMIES = 5
+
+# Physics
+GRAVITY = 0.8
+GROUND_LEVEL = 450
+
+# Game progression
+ENEMIES_PER_STAGE = 15
+STAGE_NAMES = [
+    "WILLIAMSBURG STREETS",
+    "BROOKLYN BRIDGE", 
+    "TIMES SQUARE",
+    "MAXCORP TOWER"
+]

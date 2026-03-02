@@ -52,7 +52,33 @@ AI-powered tool for private company valuation analysis.
 #### Overview
 Personal reading companion with catalog and recommendations.
 
+### 6. Pokemon Card Database and Valuation Tool https://github.com/EdSappin/ai-builder-journey/blob/main/Cursor-Projects/Pokemon%20Card%20Database%20and%20Valuation%20Tool/pokemon_card_README.md
+
+#### Overview
+Pokemon card tracker and valuation manager
+
 _Updated January 21, 2026_
 
 
-_Last Updated January 2026_
+## New Apps Built
+### 7. AI Academy https://aiacademygame.lovable.app/
+
+#### Overview
+Interactive AI course for teens
+
+### 8. AI Quest
+
+#### Overview
+Learn to use AI like a pro — with real examples from Claude & ChatGPT
+
+### 9. Connective CRM https://connectivecrm.lovable.app/
+
+#### Overview
+Basic CRM with to dos, integrations, and lead tracking
+
+_Updated February 27, 2026_
+
+
+_Last Updated February 2026_
+
+

@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI Quest — Learn to Use AI Like a Pro</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;700&family=Outfit:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #0d0d12;
+      --surface: #16161d;
+      --border: #2a2a36;
+      --accent: #00e5a0;
+      --accent-dim: #00b87a;
+      --purple: #a855f7;
+      --orange: #f97316;
+      --text: #e4e4e7;
+      --text-muted: #71717a;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Outfit', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      min-height: 100vh;
+      line-height: 1.6;
+    }
+
+    .container {
+      max-width: 640px;
+      margin: 0 auto;
+      padding: 2rem 1.5rem;
+    }
+
+    header {
+      text-align: center;
+      margin-bottom: 2.5rem;
+    }
+
+    h1 {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 2rem;
+      font-weight: 700;
+      background: linear-gradient(135deg, var(--accent), var(--purple));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      margin-bottom: 0.5rem;
+    }
+
+    .subtitle {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+    }
+
+    .mission-badge {
+      display: inline-block;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.75rem;
+      color: var(--accent);
+      background: rgba(0, 229, 160, 0.12);
+      padding: 0.35rem 0.75rem;
+      border-radius: 999px;
+      margin-bottom: 1.5rem;
+    }
+
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 1.5rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .card h2 {
+      font-size: 1.2rem;
+      font-weight: 600;
+      margin-bottom: 0.75rem;
+      color: var(--text);
+    }
+
+    .card p {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+    }
+
+    .prompt-box {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.85rem;
+      background: rgba(0, 0, 0, 0.35);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 1rem;
+      margin: 0.75rem 0;
+      color: var(--accent);
+      white-space: pre-wrap;
+      word-break: break-word;
+    }
+
+    .prompt-box.bad {
+      color: #f87171;
+      border-color: rgba(248, 113, 113, 0.3);
+    }
+
+    .prompt-box.good {
+      color: var(--accent);
+      border-color: rgba(0, 229, 160, 0.3);
+    }
+
+    .options {
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+
+    .option {
+      font-family: 'Outfit', sans-serif;
+      text-align: left;
+      padding: 1rem 1.25rem;
+      background: var(--surface);
+      border: 2px solid var(--border);
+      border-radius: 10px;
+      color: var(--text);
+      cursor: pointer;
+      transition: border-color 0.2s, background 0.2s;
+      font-size: 0.95rem;
+    }
+
+    .option:hover {
+      border-color: var(--accent-dim);
+      background: rgba(0, 229, 160, 0.06);
+    }
+
+    .option.selected {
+      border-color: var(--accent);
+      background: rgba(0, 229, 160, 0.12);
+    }
+
+    .option.correct {
+      border-color: var(--accent);
+      background: rgba(0, 229, 160, 0.15);
+    }
+
+    .option.wrong {
+      border-color: #f87171;
+      background: rgba(248, 113, 113, 0.1);
+    }
+
+    .option:disabled {
+      cursor: default;
+      opacity: 0.9;
+    }
+
+    .btn {
+      font-family: 'Outfit', sans-serif;
+      font-weight: 600;
+      padding: 0.85rem 1.5rem;
+      border-radius: 10px;
+      border: none;
+      cursor: pointer;
+      font-size: 1rem;
+      transition: transform 0.15s, box-shadow 0.15s;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, var(--accent), var(--accent-dim));
+      color: var(--bg);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 6px 24px rgba(0, 229, 160, 0.35);
+    }
+
+    .btn-block {
+      width: 100%;
+      margin-top: 1rem;
+    }
+
+    .feedback {
+      padding: 1rem;
+      border-radius: 10px;
+      margin-top: 1rem;
+      font-size: 0.95rem;
+    }
+
+    .feedback.correct {
+      background: rgba(0, 229, 160, 0.15);
+      border: 1px solid rgba(0, 229, 160, 0.4);
+      color: var(--accent);
+    }
+
+    .feedback.wrong {
+      background: rgba(248, 113, 113, 0.1);
+      border: 1px solid rgba(248, 113, 113, 0.3);
+      color: #f87171;
+    }
+
+    .tip {
+      background: rgba(168, 85, 247, 0.12);
+      border: 1px solid rgba(168, 85, 247, 0.3);
+      border-radius: 8px;
+      padding: 1rem;
+      margin-top: 1rem;
+      font-size: 0.9rem;
+      color: #c4b5fd;
+    }
+
+    .tip strong {
+      color: var(--purple);
+    }
+
+    .source-tag {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      margin-top: 0.5rem;
+    }
+
+    .progress-bar {
+      height: 6px;
+      background: var(--border);
+      border-radius: 999px;
+      overflow: hidden;
+      margin-bottom: 2rem;
+    }
+
+    .progress-fill {
+      height: 100%;
+      background: linear-gradient(90deg, var(--accent), var(--purple));
+      border-radius: 999px;
+      transition: width 0.3s ease;
+    }
+
+    .score-display {
+      text-align: center;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 1.5rem;
+      color: var(--accent);
+      margin-bottom: 1rem;
+    }
+
+    .screen {
+      display: none;
+    }
+
+    .screen.active {
+      display: block;
+      animation: fadeIn 0.3s ease;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(8px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .welcome-text {
+      margin-bottom: 1.5rem;
+      color: var(--text-muted);
+    }
+
+    .real-example {
+      border-left: 3px solid var(--purple);
+      padding-left: 1rem;
+      margin: 1rem 0;
+      font-size: 0.9rem;
+      color: var(--text-muted);
+    }
+
+    .real-example .tool {
+      font-weight: 600;
+      color: var(--purple);
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>AI Quest</h1>
+      <p class="subtitle">Learn to use AI like a pro — with real examples from Claude & ChatGPT</p>
+    </header>
+
+    <div class="progress-bar">
+      <div class="progress-fill" id="progressFill" style="width: 0%"></div>
+    </div>
+
+    <!-- Welcome -->
+    <div id="screen-welcome" class="screen active">
+      <span class="mission-badge">Start</span>
+      <div class="card">
+        <h2>Welcome to AI Quest</h2>
+        <p class="welcome-text">
+          You’ll learn how to get the most out of AI tools like <strong>Claude</strong> and <strong>ChatGPT</strong> using real strategies that students and pros use every day. No boring lectures — just missions and challenges.
+        </p>
+        <p class="welcome-text">
+          By the end you’ll know how to write better prompts, when to use which tool, and how to stay sharp while using AI.
+        </p>
+        <button class="btn btn-primary btn-block" onclick="goTo('screen-mission1')">Start Mission 1</button>
+      </div>
+    </div>
+
+    <!-- Mission 1: What is AI -->
+    <div id="screen-mission1" class="screen">
+      <span class="mission-badge">Mission 1 — The basics</span>
+      <div class="card">
+        <h2>What can AI actually do?</h2>
+        <p>AI assistants like Claude and ChatGPT are great at <strong>explaining</strong>, <strong>brainstorming</strong>, and <strong>breaking down steps</strong>. They’re not so good at knowing your class rules or what happened yesterday.</p>
+        <p style="margin-top: 0.75rem;">Which of these is a good use of AI for school?</p>
+        <div class="options" style="margin-top: 1rem;">
+          <button class="option" data-correct="false">Ask it to write your whole essay and turn it in as yours</button>
+          <button class="option" data-correct="true">Ask it to explain a hard concept in simple terms, then you write your own answer</button>
+          <button class="option" data-correct="false">Copy its answer word-for-word for a homework question</button>
+        </div>
+        <div id="feedback-m1" class="feedback" style="display: none;"></div>
+        <button id="btn-m1" class="btn btn-primary btn-block" style="display: none;" onclick="goTo('screen-mission2')">Next: Prompt power</button>
+      </div>
+    </div>
+
+    <!-- Mission 2: Prompt power -->
+    <div id="screen-mission2" class="screen">
+      <span class="mission-badge">Mission 2 — Prompt power</span>
+      <div class="card">
+        <h2>Vague vs specific prompts</h2>
+        <p>Better prompts get better answers. Real tip from <strong>ChatGPT</strong> and <strong>Claude</strong>: be clear about what you want, who it’s for, and how you want it (format, length).</p>
+        <p style="margin-top: 0.75rem;">You need help understanding photosynthesis. Which prompt will get you a more useful answer?</p>
+        <div class="prompt-box bad">Tell me about photosynthesis</div>
+        <div class="prompt-box good">Explain photosynthesis as if I'm 12, then give one real example and one simple analogy. Keep it under 200 words.</div>
+        <p style="margin-top: 1rem; font-size: 0.9rem;">Which one is stronger and why?</p>
+        <div class="options" style="margin-top: 0.75rem;">
+          <button class="option" data-correct="false">The first — it’s short and easy</button>
+          <button class="option" data-correct="true">The second — it says who it’s for, how to explain, and the format</button>
+          <button class="option" data-correct="false">Both are the same</button>
+        </div>
+        <div id="feedback-m2" class="feedback" style="display: none;"></div>
+        <div class="tip">
+          <strong>Real ChatGPT prompt:</strong> “Explain this concept to me as if I am 12 years old, then explain it again in normal academic detail, then give me one real example and one analogy: [topic].”
+        </div>
+        <button id="btn-m2" class="btn btn-primary btn-block" style="display: none;" onclick="goTo('screen-mission3')">Next: Real tools</button>
+      </div>
+    </div>
+
+    <!-- Mission 3: Claude & ChatGPT real tools -->
+    <div id="screen-mission3" class="screen">
+      <span class="mission-badge">Mission 3 — Real tools</span>
+      <div class="card">
+        <h2>Claude: Learning Mode & Artifacts</h2>
+        <p>Claude has a <strong>Learning Mode</strong> that doesn’t just give you the answer — it asks you questions so you figure it out (Socratic method). Great for actually understanding.</p>
+        <div class="real-example">
+          <span class="tool">Claude (Education)</span> — Students use it for: study projects, career projects, and research. It can turn your handwritten notes into clean documents and create quizzes with its Artifacts feature.
+        </div>
+        <h2 style="margin-top: 1.25rem;">ChatGPT: Study & homework help</h2>
+        <p>ChatGPT is used for 24/7 study help, step-by-step explanations, and practice questions. The key is asking in a clear, structured way.</p>
+        <div class="real-example">
+          <span class="tool">ChatGPT (students)</span> — Example: “Help me solve: 3x + 7 = 22, showing each step.” Or: “Generate 10 exam-style questions from these notes. After I answer each, grade me and explain the correct answer.” Another: “Help me create a study schedule. I have 5 classes, 2 hours of homework each day, and soccer on Tuesdays. I want to improve my grades but keep balance.”
+        </div>
+        <p style="margin-top: 1rem;">What’s a good reason to use Claude’s Learning Mode instead of asking for the answer directly?</p>
+        <div class="options" style="margin-top: 0.75rem;">
+          <button class="option" data-correct="false">It’s faster</button>
+          <button class="option" data-correct="true">It helps you think through the problem and understand it better</button>
+          <button class="option" data-correct="false">It always gives shorter answers</button>
+        </div>
+        <div id="feedback-m3" class="feedback" style="display: none;"></div>
+        <button id="btn-m3" class="btn btn-primary btn-block" style="display: none;" onclick="goTo('screen-mission4')">Next: When to use AI</button>
+      </div>
+    </div>
+
+    <!-- Mission 4: When to use AI -->
+    <div id="screen-mission4" class="screen">
+      <span class="mission-badge">Mission 4 — When to use AI</span>
+      <div class="card">
+        <h2>Using AI the right way</h2>
+        <p>Schools and universities (e.g. Northeastern, Dartmouth, LSE) use AI in class with one main rule: <strong>use it to build your thinking</strong>, not to replace it.</p>
+        <p style="margin-top: 0.75rem;">Your teacher wants an essay that shows <em>your</em> ideas. What’s the best approach?</p>
+        <div class="options" style="margin-top: 1rem;">
+          <button class="option" data-correct="true">Use AI to brainstorm ideas and get feedback on your draft, then write and edit it yourself</button>
+          <button class="option" data-correct="false">Ask AI to write the essay and change a few words so it “sounds like you”</button>
+          <button class="option" data-correct="false">Don’t use AI at all so you don’t get in trouble</button>
+        </div>
+        <div id="feedback-m4" class="feedback" style="display: none;"></div>
+        <button id="btn-m4" class="btn btn-primary btn-block" style="display: none;" onclick="goTo('screen-mission5')">Next: Final challenge</button>
+      </div>
+    </div>
+
+    <!-- Mission 5: Write your own prompt -->
+    <div id="screen-mission5" class="screen">
+      <span class="mission-badge">Mission 5 — Final challenge</span>
+      <div class="card">
+        <h2>Prompt challenge</h2>
+        <p>You have a math test tomorrow. You want to practice with questions that match your class level. Which prompt is best?</p>
+        <div class="options" style="margin-top: 1rem;">
+          <button class="option" data-correct="false">Give me math questions</button>
+          <button class="option" data-correct="false">I need help with math for my test</button>
+          <button class="option" data-correct="true">Generate 10 practice questions on [topic]. Make them similar to my grade level (e.g. 9th grade algebra). After I answer each, tell me if I’m right and explain the solution.</button>
+        </div>
+        <div id="feedback-m5" class="feedback" style="display: none;"></div>
+        <div class="tip">
+          <strong>Real ChatGPT-style prompt:</strong> “Generate 10 exam-style questions based on this material. Make the difficulty match first-year university level. After I answer each question, grade me and explain the correct answer clearly: [notes].”
+        </div>
+        <button id="btn-m5" class="btn btn-primary btn-block" style="display: none;" onclick="goTo('screen-results')">See my results</button>
+      </div>
+    </div>
+
+    <!-- Results -->
+    <div id="screen-results" class="screen">
+      <span class="mission-badge">Complete</span>
+      <div class="card">
+        <h2>You did it!</h2>
+        <p class="score-display" id="scoreDisplay">0 / 5</p>
+        <p class="welcome-text">
+          You’ve learned how to write better prompts, use Claude’s Learning Mode and Artifacts, and use ChatGPT for study help the right way. Keep practicing with real tools — the best way to get better is to try these prompts yourself.
+        </p>
+        <p class="welcome-text" style="margin-top: 1rem;">
+          <strong>Quick recap:</strong> Be specific (who, what, format). Use Claude when you want to think through a problem. Use ChatGPT for step-by-step help and practice questions. Always use AI to support your learning, not replace your thinking.
+        </p>
+        <button class="btn btn-primary btn-block" style="margin-top: 1.5rem;" onclick="resetGame()">Play again</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const TOTAL_QUESTIONS = 5;
+    let score = 0;
+    let answered = new Set();
+
+    const screens = [
+      'screen-welcome',
+      'screen-mission1',
+      'screen-mission2',
+      'screen-mission3',
+      'screen-mission4',
+      'screen-mission5',
+      'screen-results'
+    ];
+
+    function goTo(screenId) {
+      screens.forEach(id => {
+        document.getElementById(id).classList.toggle('active', id === screenId);
+      });
+      const idx = screens.indexOf(screenId);
+      const progress = idx <= 0 ? 0 : (idx / (screens.length - 1)) * 100;
+      document.getElementById('progressFill').style.width = progress + '%';
+      if (screenId === 'screen-results') {
+        document.getElementById('scoreDisplay').textContent = score + ' / ' + TOTAL_QUESTIONS;
+      }
+    }
+
+    function showFeedback(missionNum, isCorrect, message) {
+      const feedback = document.getElementById(`feedback-m${missionNum}`);
+      const btn = document.getElementById(`btn-m${missionNum}`);
+      feedback.textContent = message;
+      feedback.className = 'feedback ' + (isCorrect ? 'correct' : 'wrong');
+      feedback.style.display = 'block';
+      if (btn) btn.style.display = 'block';
+    }
+
+    function markOptions(missionNum, correctIndex) {
+      const card = document.querySelector(`#screen-mission${missionNum} .options`);
+      const opts = card.querySelectorAll('.option');
+      opts.forEach((o, i) => {
+        o.disabled = true;
+        o.classList.remove('selected');
+        if (i === correctIndex) o.classList.add('correct');
+        else if (o.dataset.correct === 'true') o.classList.add('correct');
+        else if (o.classList.contains('selected')) o.classList.add('wrong');
+      });
+    }
+
+    function setupMission(num, correctMessage, wrongMessage) {
+      const card = document.querySelector(`#screen-mission${num} .options`);
+      if (!card) return;
+      const opts = card.querySelectorAll('.option');
+      opts.forEach((opt, i) => {
+        opt.addEventListener('click', function() {
+          if (answered.has(num)) return;
+          opts.forEach(o => o.classList.remove('selected'));
+          this.classList.add('selected');
+          const isCorrect = this.dataset.correct === 'true';
+          answered.add(num);
+          if (isCorrect) score++;
+          const correctIndex = Array.from(opts).findIndex(o => o.dataset.correct === 'true');
+          markOptions(num, correctIndex);
+          showFeedback(num, isCorrect, isCorrect ? correctMessage : wrongMessage);
+        });
+      });
+    }
+
+    function resetGame() {
+      score = 0;
+      answered.clear();
+      goTo('screen-welcome');
+      screens.slice(1, 6).forEach((id, i) => {
+        const n = i + 1;
+        const feedback = document.getElementById(`feedback-m${n}`);
+        const btn = document.getElementById(`btn-m${n}`);
+        if (feedback) { feedback.style.display = 'none'; feedback.textContent = ''; }
+        if (btn) btn.style.display = 'none';
+        const card = document.querySelector(`#screen-mission${n} .options`);
+        if (card) {
+          card.querySelectorAll('.option').forEach(o => {
+            o.disabled = false;
+            o.classList.remove('selected', 'correct', 'wrong');
+          });
+        }
+      });
+      document.getElementById('scoreDisplay').textContent = '0 / 5';
+    }
+
+    document.addEventListener('DOMContentLoaded', function() {
+      setupMission(1, 'Exactly — use AI to learn and explain, then do the work yourself.', 'Not quite. Submitting AI work as your own is dishonest and doesn’t help you learn.');
+      setupMission(2, 'Right — audience, style, and format make the answer much more useful.', 'The second prompt works better because it gives context and structure.');
+      setupMission(3, 'Correct — Learning Mode is built to strengthen your reasoning, not just hand you answers.', 'Learning Mode is designed to help you understand by guiding your thinking.');
+      setupMission(4, 'That’s the right approach: AI supports your ideas and writing, you stay in the driver’s seat.', 'Using AI to do your thinking for you doesn’t build your skills or satisfy your teacher.');
+      setupMission(5, 'Perfect — that prompt is specific, sets difficulty, and asks for feedback. You’re ready to use AI for real.', 'The best prompts specify topic, level, and what you want (e.g. grading + explanation).');
+
+    });
+  </script>
+</body>
+</html>
