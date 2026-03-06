@@ -74,9 +74,22 @@ Learn to use AI like a pro — with real examples from Claude & ChatGPT
 ### 9. Connective CRM https://connectivecrm.lovable.app/
 
 #### Overview
-Simple CRM with to dos, integrations, and lead tracking
+Easy to use CRM with to dos, integrations, and lead tracking
 
 _Updated March 2, 2026_
+
+##New Apps Built
+### 10. Streak Bloom https://streakbloom.lovable.app 
+
+#### Overview
+Build better habits and motivate yourself with streaks
+
+### 11. Athena Project Manager https://athenapm.lovable.app/ 
+
+#### Overview
+Project management tool for companies and departments to track progress and have a clear view on roadmap and status
+
+_Updated March 6, 2026_
 
 
 _Last Updated March 2026_
