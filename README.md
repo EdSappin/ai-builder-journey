@@ -78,7 +78,7 @@ Easy to use CRM with to dos, integrations, and lead tracking
 
 _Updated March 2, 2026_
 
-##New Apps Built
+## New Apps Built
 ### 10. Streak Bloom https://streakbloom.lovable.app 
 
 #### Overview
